@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="style.css">
+	
+	</head>
+	<body>
+		<div class="nav">
+			<div class="toggle"><span></span></div>
+			<ul>
+				<li><a href="#Home">Home</a></li>
+				<li><a href="#About">About</a></li>
+				<li><a href="#Services">Services</a></li>
+				<li><a href="#Works">Works</a></li>
+				<li><a href="#Team">Team</a></li>
+				<li><a href="#Contact">Contact</a></li>
+			</ul>
+		</div>
+		<section id="Home"><h2>Home</h2></section>
+		<section id="About"><h2>About</h2></section>
+		<section id="Services"><h2>Services</h2></section>
+		<section id="Works"><h2>Works</h2></section>
+		<section id="Team"><h2>Team</h2></section>
+		<section id="Contact"><h2>Contact</h2></section>
+		<script type="text/javascript">
+			const nav = document.querySelector('.nav');
+			document.querySelector('.toggle').onclick = function()
+			{
+				this.classList.toggle('active');
+				nav.classList.toggle('active');
+			}
+		</script>
+	</body>
+</html>

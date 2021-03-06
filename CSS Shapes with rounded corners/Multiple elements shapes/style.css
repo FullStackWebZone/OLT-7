@@ -1,0 +1,31 @@
+.box {
+  width: 201px;
+  height: 200px;
+  background: red;
+  margin: 100px auto;
+  filter: url(#round);
+  position:relative;
+}
+.box::before,
+.box::after {
+   content:"";
+   position:absolute;
+   border-radius:50%;
+   width:100px;
+   height:100px;
+   bottom:40px;
+   background: inherit;
+   left:-40px;
+}
+.box::after {
+  right:-40px;
+  left:auto;
+}
+.box div {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  position: relative;
+  top: -50px;
+  background: inherit;
+}

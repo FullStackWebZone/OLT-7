@@ -1,0 +1,11 @@
+.box {
+  width: 300px;
+  height: 400px;
+  background: 
+    radial-gradient(60% 40% at top   , transparent 90%,red) top   /100% 40% no-repeat,
+    radial-gradient(circle closest-side,transparent 90%,red ) center/50% 30% repeat-x,
+    radial-gradient(60% 40% at bottom, transparent 90%,red) bottom/100% 40% no-repeat;
+  margin: 40px auto;
+  filter: url(#round);
+  
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="style.css">
+	
+	</head>
+	<body>
+		 <section>
+   <h1>Speech<br> Recognition</h1>
+   <p>Available In Chrome😎 Only</p>
+   <div class="container">
+     <div class="texts">
+     </div>
+   </div>
+ </section>
+		<script type="text/javascript">
+			const texts = document.querySelector(".texts");
+
+window.SpeechRecognition =
+  window.SpeechRecognition || window.webkitSpeechRecognition;
+
+const recognition = new SpeechRecognition();
+recognition.interimResults = true;
+
+let p = document.createElement("p");
+
+recognition.addEventListener("result", (e) => {
+  texts.appendChild(p);
+  const text = Array.from(e.results)
+    .map((result) => result[0])
+    .map((result) => result.transcript)
+    .join("");
+
+  p.innerText = text;
+  if (e.results[0].isFinal) {
+    if (text.includes("how are you")) {
+      p = document.createElement("p");
+      p.classList.add("replay");
+      p.innerText = "I am fine";
+      texts.appendChild(p);
+    }
+    if (
+      text.includes("what's your name") ||
+      text.includes("what is your name")
+    ) {
+      p = document.createElement("p");
+      p.classList.add("replay");
+      p.innerText = "My Name is Cifar";
+      texts.appendChild(p);
+    }
+    if (text.includes("open my YouTube")) {
+      p = document.createElement("p");
+      p.classList.add("replay");
+      p.innerText = "opening youtube channel";
+      texts.appendChild(p);
+      console.log("opening youtube");
+      window.open("https://www.youtube.com/channel/UCdxaLo9ALJgXgOUDURRPGiQ");
+    }
+    p = document.createElement("p");
+  }
+});
+
+recognition.addEventListener("end", () => {
+  recognition.start();
+});
+
+recognition.start();
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,54 @@
+Home About Contact
+annyang! Speech Recognition with JavaScript Tutorial
+By Raddy in JavaScript · 4th May 2020
+
+Annyang is a tiny javascript library that lets your visitors control your site with voice commands. annyang supports multiple languages, has no dependencies, weighs just 2kb and is free to use.
+
+
+ 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annyang!</title>
+</head>
+<body>
+
+	<script src="annyang.min.js"></script>
+   
+
+    <!--<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>-->
+    <script>
+
+        var messages = ['🔊 Hey', '🔊 Hi, there!', '🔊 Hi!', '🔊 Hello'];
+
+        if(annyang){
+            console.log("We have annyang!");
+
+            var commands = {
+                'Hello' : hello,
+                'What is your name' : myname
+            }
+
+            function hello(){
+                var randomIndex = Math.round(Math.random() * messages.length);
+                console.log(`%c ${messages[randomIndex]}`,'color: green; font-weight:bold;');
+            }
+
+            function myname(){
+                console.log("My name is Billy!");
+            }
+
+            // Add Commands
+            annyang.addCommands(commands);
+
+            // Start listening
+            annyang.start();
+
+        }
+
+    </script>
+</body>
+</html>
